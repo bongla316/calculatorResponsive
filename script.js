@@ -19,86 +19,90 @@ function clear(){
 }
 
 function operate(num1, num2, operator){
-    //console.log(num1);
-    //console.log(num2);
-    //console.log(operator);
-
     if(operator == "add") {
-        //console.log("addCase");
-        //document.getElementById("display").innerHTML = add(num1, num2);
         return add(num1, num2);
     }
     
     else if(operator == "subtract"){
-        //console.log("subtractCase");
-        //document.getElementById("display").innerHTML = subtract(num1, num2);
         return subtract(num1, num2);
     }
 
     else if(operator == "divide"){
-        //console.log("divideCase");
-        //document.getElementById("display").innerHTML = divide(num1, num2);
         return divide(num1, num2);
     }
 
     else if(operator == "multiply"){
-        //console.log("multiplyCase");
-        //document.getElementById("display").innerHTML = multiply(num1, num2);
         return multiply(num1, num2);
     }
 }
 
 var numberList = document.querySelectorAll(".number");
 var operatorList = document.querySelectorAll(".operatorFunctions");
-var displayValue;
-var currentOperatorValue;
+var displayValue = [];
+var currentOperatorValue = 0;
 var stillOperating = false;
-var value1 = 0;
-var value2 = 0;
+var value1;
+var value2;
 var operator;
 
 
 Array.from(numberList).forEach(numberButton => {
     numberButton.addEventListener("click", function(e){
-        displayValue = e.target.value;
-        document.getElementById("display").innerHTML = displayValue;
+        if (!stillOperating){
+            displayValue.push(e.target.value);
+            document.getElementById("display").innerHTML = displayValue.join("");
+        }
         if (stillOperating){
-            value2 = e.target.value;
+            displayValue.push(e.target.value);
+            document.getElementById("display").innerHTML = "" + displayValue.join("");
         }
     });
 });
 
-
-
 Array.from(operatorList).forEach(operatorButton => {
     operatorButton.addEventListener("click", function(e){
         currentOperatorValue = e.target.value;
-        //console.log(e.target.value);
         if (currentOperatorValue == "clear") {
              clear();
         }
 
         else if (currentOperatorValue == "evaluate"){
-            value2 = document.getElementById("display").innerHTML;
-            console.log("Result: " + operate(value1, value2, operator));
-            stillOperating = false;
+            value2 = displayValue.join("");
+            document.getElementById("display").innerHTML = operate(value1, value2, operator);
+            // stillOperating = false;
 
         }
 
         else if (currentOperatorValue != "evaluate" && stillOperating == true){
-            //value2 = document.getElementById("display").innerHTML;
-            console.log("Value1: " + value1);
-            console.log("Value2: " + value2);
+            // value1 = operate(value1, value2, operator);
+            // operator = currentOperatorValue;
+            value2 = displayValue.join("");
+            console.log("Value1 sas: " + value1);
+            console.log(operator);
             value1 = operate(value1, value2, operator);
+            console.log("Value2: " + value2);
             console.log("Value1: " + value1);
-            
+
             operator = currentOperatorValue;
+            displayValue = [];
+            displayValue.push(value1);
+            document.getElementById("display").innerHTML = "" + displayValue;
+            displayValue = [];
         }
 
         else {
+            // if (currentOperatorValue == 0){
+            //     stillOperating = false;
+            // }
+            // else {
+            //     stillOperating = true;
+            // } 
+            value1 = displayValue.join("");
             operator = currentOperatorValue;
             stillOperating = true;
-            value1 = document.getElementById("display").innerHTML;
+            document.getElementById("display").innerHTML = "";
+            displayValue = [];
+            console.log(value1);
         }
 
     });
