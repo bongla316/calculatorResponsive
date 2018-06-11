@@ -1,13 +1,7 @@
 # Calculator
-Online calculator
-
-Still left to do:
-
-- Style calculator (basic style done, going to add animations for the buttons)
-- Make calculator accept multiple digit numbers (*)
-- Make calculator display final answer (*)
-- Add dot for floating point numbers (*)
-- Write code to do calculations on floating point numbers correctly (*)
-
-
-(*) = Done
+Online calculator:
+- Redesigned initial repository to use responsive design so that it scales automatically to mobile phones
+- Also plan on adding the following:
+    - Touch screen support
+    - CSS animations for button presses
+    - Proper display functionality
