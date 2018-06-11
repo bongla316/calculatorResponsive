@@ -1,54 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <meta charset="utf-8">
-        <title>Calculator</title>
-    </head>
 
-    <body>
-        <div id="wrapper">
-            <div id="display">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <title>Calculator</title>
+</head>
 
-            </div>
-
-            <div class="keypad">
-                <div class="row1">
-                    <button class="operatorFunctions" id="clear" value="clear">C</button>
-                    <button class="operatorFunctions" id="delete" value="delete">DEL</button>
-                    <button class="operatorFunctions" id="divide" value="divide">/</button>
-                </div>
-
-                <div class="row2">
-                    <button class="number" id="7" value="7">7</button>
-                    <button class="number" id="8" value="8">8</button>
-                    <button class="number" id="9" value="9">9</button>
-                    <button class="operatorFunctions" id="multiply" value="multiply">*</button>
-                </div>
-
-                <div class="row3">
-                    <button class="number" id="4" value="4">4</button>
-                    <button class="number" id="5" value="5">5</button>
-                    <button class="number" id="6" value="6">6</button>
-                    <button class="operatorFunctions" id="subtract" value="subtract">-</button>
-                </div>
-
-                <div class="row4">
-                    <button class="number" id="1" value="1">1</button>
-                    <button class="number" id="2" value="2">2</button>
-                    <button class="number" id="3" value="3">3</button>
-                    <button class="operatorFunctions" id="add" value="add">+</button>
-                </div>
-
-                <div class="row5">
-                    <button class="number" id="zero" value="0">0</button>
-                    <button class="number" id="decimal" value=".">.</button>
-                    <button class="operatorFunctions" id="evaluate" value="evaluate">=</button>
-                    
-                </div>                
-            </div>
+<body>
+    <div id="wrapper">
+        <div id="display"></div>
+        <div id="keypad">
+            <button class="operatorFunctions row1" id="clear" value="clear">C</button>
+            <button class="operatorFunctions row1" id="delete" value="delete">DEL</button>
+            <button class="operatorFunctions row1" id="divide" value="divide">/</button>
+            <button class="number" id="7 row2" value="7">7</button>
+            <button class="number" id="8 row2" value="8">8</button>
+            <button class="number" id="9 row2" value="9">9</button>
+            <button class="operatorFunctions row2" id="multiply" value="multiply">*</button>
+            <button class="number" id="4 row3" value="4">4</button>
+            <button class="number" id="5 row3" value="5">5</button>
+            <button class="number" id="6 row3" value="6">6</button>
+            <button class="operatorFunctions row3" id="subtract" value="subtract">-</button>
+            <button class="number" id="1 row4" value="1">1</button>
+            <button class="number" id="2 row4" value="2">2</button>
+            <button class="number" id="3 row4" value="3">3</button>
+            <button class="operatorFunctions row4" id="add" value="add">+</button>
+            <button class="number row5" id="zero" value="0">0</button>
+            <button class="number row5" id="decimal" value=".">.</button>
+            <button class="operatorFunctions row5" id="evaluate" value="evaluate">=</button>
         </div>
-    </body>
-    
-    <script src="script.js"></script>
+
+    </div>
+</body>
+
+<script src="script.js"></script>
+
 </html>
