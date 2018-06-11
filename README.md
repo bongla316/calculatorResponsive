@@ -5,3 +5,10 @@ Online calculator:
     - Touch screen support
     - CSS animations for button presses
     - Proper display functionality
+
+- To do list:
+    - Improve animation on button press and hover
+    - Improve the appearance of the calculator
+    - Make it responsive to different screen sizes
+    - Add keyboard presses for laptop/desktop users
+    - Add touchscreen input
